@@ -9,6 +9,7 @@ services:
     name: ishtiaque-portfolio
     env: python
     plan: free
+    pythonVersion: "3.11.0"
     buildCommand: "bash build.sh"
     startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
     envVars:
@@ -20,4 +21,6 @@ services:
         generateValue: true
       - key: ADMIN_PASSWORD
         value: ishtiaque2025
+      - key: PYTHON_VERSION
+        value: "3.11.0"
     autoDeploy: true
