@@ -6,7 +6,9 @@ import { Experience, Certification } from '../../../types'
 const inp   = 'w-full border border-border rounded-lg px-3 py-2.5 text-sm bg-bg focus:outline-none focus:border-navy transition-colors'
 const label = 'font-mono text-[10px] uppercase tracking-widest text-light block mb-1.5'
 
-const EXP_EMPTY  = { type:'work' as const, date:'', title:'', organization:'', description:'', order:0 }
+const EXP_EMPTY: { type: 'work' | 'education'; date: string; title: string; organization: string; description: string; order: number } = {
+  type: 'work', date: '', title: '', organization: '', description: '', order: 0
+}
 const CERT_EMPTY = { issuer:'', name:'', date:'', order:0 }
 
 export default function TabExperience() {
