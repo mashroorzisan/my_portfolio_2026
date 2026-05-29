@@ -33,9 +33,9 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
   let stats: HeroStat[] = []
   try { stats = JSON.parse(settings.hero_stats ?? '[]') } catch { /* fallback */ }
 
-  // Build hero photo URL
+  // Build hero photo URL — relative path works on production, proxy handles local dev
   const heroPhotoUrl = settings.hero_photo
-    ? (settings.hero_photo.startsWith('http') ? settings.hero_photo : `http://localhost:8000${settings.hero_photo}`)
+    ? (settings.hero_photo.startsWith('http') ? settings.hero_photo : settings.hero_photo)
     : null
 
   useEffect(() => {

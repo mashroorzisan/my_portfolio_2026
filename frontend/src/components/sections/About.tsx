@@ -22,9 +22,9 @@ export default function About({ settings }: { settings: SiteSettings }) {
 
   const heading = settings.about_heading || ''
 
-  // Build full photo URL — backend serves uploads at /static/uploads/
+  // Photo URL — relative path works on production, Vite proxy handles local dev
   const photoUrl = settings.about_photo
-    ? (settings.about_photo.startsWith('http') ? settings.about_photo : `http://localhost:8000${settings.about_photo}`)
+    ? (settings.about_photo.startsWith('http') ? settings.about_photo : settings.about_photo)
     : null
 
   const initials = settings.name.split(' ').map((n: string) => n[0]).join('')

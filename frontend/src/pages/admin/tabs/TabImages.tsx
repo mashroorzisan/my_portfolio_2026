@@ -7,7 +7,8 @@ import { SiteSettings } from '../../../types'
 function photoUrl(raw?: string): string | null {
   if (!raw) return null
   if (raw.startsWith('http')) return raw
-  return `http://localhost:8000${raw}`
+  // Works on both localhost and Render — uses same origin as the page
+  return raw
 }
 
 interface UploadZoneProps {
@@ -153,7 +154,7 @@ export default function TabImages() {
           sublabel="Appears top-right in your hero section as a portrait. Square or portrait orientation works best."
           currentUrl={s?.hero_photo}
           aspect="circle"
-          endpoint="/upload/hero"
+          endpoint="/api/upload/hero"
           onSuccess={refresh}
         />
 
@@ -162,7 +163,7 @@ export default function TabImages() {
           sublabel="Appears as your circular profile picture in the About section. Square or portrait works best."
           currentUrl={s?.about_photo}
           aspect="circle"
-          endpoint="/upload/about"
+          endpoint="/api/upload/about"
           onSuccess={refresh}
         />
       </div>
