@@ -74,6 +74,25 @@ export default function TabAbout() {
           </div>
         </Section>
 
+        {/* Photos */}
+        <Section title="Photos">
+          <div className="flex flex-col gap-4">
+            <p className="text-xs text-mid -mt-1">Paste any direct image URL — Cloudinary, imgur, or any public image link. Changes go live on Save.</p>
+            <F lbl="Hero Photo URL (appears top-right in hero section)">
+              <input className={inp} value={form.hero_photo||''} onChange={f('hero_photo')} placeholder="https://res.cloudinary.com/..." />
+            </F>
+            {form.hero_photo && (
+              <img src={form.hero_photo} alt="Hero preview" className="w-32 h-32 object-cover rounded-xl border border-border shadow" />
+            )}
+            <F lbl="Profile Photo URL (circular photo in About section)">
+              <input className={inp} value={form.about_photo||''} onChange={f('about_photo')} placeholder="https://res.cloudinary.com/..." />
+            </F>
+            {form.about_photo && (
+              <img src={form.about_photo} alt="Profile preview" className="w-24 h-24 object-cover rounded-full border border-border shadow" />
+            )}
+          </div>
+        </Section>
+
         {/* Contact */}
         <Section title="Contact Section">
           <F lbl="Contact subtitle text">
