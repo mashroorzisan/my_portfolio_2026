@@ -10,6 +10,6 @@ npm run build
 
 echo "==> Installing backend dependencies..."
 cd ../backend
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 echo "==> Build complete."
