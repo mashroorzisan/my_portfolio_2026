@@ -1,5 +1,5 @@
 # Ishtiaque Ahmed — Portfolio
-
+portfolio link - mashroor.up.railway.app
 > Data Scientist & AI Developer • Full-stack portfolio with admin panel
 
 **Stack:** React + TypeScript + Tailwind (frontend) · FastAPI + PostgreSQL (backend) · Render (hosting)
