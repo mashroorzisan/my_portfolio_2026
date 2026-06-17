@@ -8,8 +8,11 @@ npm install
 echo "==> Building frontend..."
 npm run build
 
-echo "==> Installing backend dependencies..."
+echo "==> Installing pip..."
 cd ../backend
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3
+
+echo "==> Installing backend dependencies..."
 python3 -m pip install -r requirements.txt
 
 echo "==> Build complete."
